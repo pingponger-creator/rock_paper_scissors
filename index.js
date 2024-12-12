@@ -23,3 +23,15 @@ function getComputerChoice(){
 }
 
 console.log(getComputerChoice())
+
+// ............................................................................................................................................
+
+// Now let's write the logic for humanchoice by creating a function; getHumanChoice;
+
+function getHumanChoice(){
+    let humanChoice = prompt("Rock, Paper or Scissors")
+    return humanChoice
+}
+
+console.log(getHumanChoice())
+
