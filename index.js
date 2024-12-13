@@ -27,7 +27,9 @@ function getHumanChoice(){
     let humanChoice = prompt("Choose Rock, Paper or Scissors.\nYou have five rounds to win\nLet's go")
     if (humanChoice === null || humanChoice === "") {
         alert("You didnt enter anything!");
-    } else {
+        return getHumanChoice();
+    } 
+    else {
     humanChoice = humanChoice.toLowerCase();
     }
     return humanChoice;
@@ -37,11 +39,13 @@ function getHumanChoice(){
 
 let humanScore = 0;
 let computerScore = 0;
+let totalRounds = 5;
 
 // Function to handle score
 
 function updateScore(){
-    alert(`Your Score: ${humanScore}\nComputer Score: ${computerScore}`)
+    alert(`Your Score: ${humanScore}\nComputer Score: ${computerScore}\n`)
+
 }
 
 // Write a logic to play a single round
@@ -89,9 +93,12 @@ function playRound(humanChoice, computerChoice)
          alert(`${humanChoice} vs ${computerChoice} is a draw`);
          updateScore()
      }
+     else{
+        return playRound()
+     }
     }
 
-// Create a function playGame
+// Create a function named playGame
 
 function playGame(){
     for(i=0; i<5; i++)
@@ -106,7 +113,7 @@ function playGame(){
         alert("You lost! Play Again")
     }
 
-    else {
+    else if (humanScore===computerScore) {
         alert("The game is a tie! Play Again")
     }
 }
