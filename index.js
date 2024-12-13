@@ -114,6 +114,7 @@ function playGame(){
 playGame()
 
 // Bug Fixed
+// Needs error handling
 
 
 
