@@ -29,6 +29,11 @@ function getHumanChoice(){
         alert("You didnt enter anything!");
         return getHumanChoice();
     } 
+    else if(!((humanChoice.toLowerCase().includes("rock"))||(humanChoice.toLowerCase().includes("paper")) ||(humanChoice.toLowerCase().includes("scissors")))) //conditon to check spelling
+    {
+        alert("Check your spelling and Enter Rock, Paper or Scissors")
+        return getHumanChoice()
+    }
     else {
     humanChoice = humanChoice.toLowerCase();
     }
