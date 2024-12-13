@@ -122,7 +122,7 @@ function playGame(){
 
 playGame()
 
-
+// There is a bug and have to looks for it
 
 
 
