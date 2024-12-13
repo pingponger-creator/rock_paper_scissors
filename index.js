@@ -6,17 +6,17 @@
 // Math.random() selects random number between 0 and 1, how to use it. Let's start with creating a function:
 
 function getComputerChoice(){
-   let choiceVar= Math.floor(Math.random()*3)  //defining/creating a choice variable that randomly generates number between 0-2 using Math.random()
-   if(choiceVar===0){
-    return "Rock"
+   let computerChoice= Math.floor(Math.random()*3 +1)  //defining/creating a choice variable that randomly generates number between 0-2 using Math.random()
+   if(computerChoice===1){
+    computerChoice= "rock"
    }
-   else if(choiceVar===1){
-    return "Paper"
+   else if(computerChoice===2){
+    computerChoice= "paper"
    }
-
    else{
-    return "Scissors"
+    computerChoice= "scissors"
    }
+   return computerChoice;
 
 }
 
@@ -24,21 +24,14 @@ function getComputerChoice(){
 // Now let's write the logic for humanchoice by creating a function; getHumanChoice;
 
 function getHumanChoice(){
-    let userInput = prompt("Rock, Paper or Scissors.\nYou have five rounds to win\nLet's go, press Ok")
-    userInput= userInput.charAt(0).toUpperCase()+userInput.slice(1).toLowerCase(); //since we have used the first letter uppercase for the Rock, Paper  or Scissor below, we can use this statement for the humanChoice to be case-insensitive.
-
-    if (userInput=="" || userInput == null){
-        alert("It's rude not to play this game :( ") //to handle other user clicks
+    let humanChoice = prompt("Choose Rock, Paper or Scissors.\nYou have five rounds to win\nLet's go")
+    if (humanChoice === null || humanChoice === "") {
+        alert("You didnt enter anything!");
+    } else {
+    humanChoice = humanChoice.toLowerCase();
     }
-  
-    return userInput
+    return humanChoice;
 }
-
-
-// Define variables such as humanChoice and computerChoice
-
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
 
 // create new variables humanScore and computeScore in the global scope
 
@@ -56,55 +49,54 @@ function updateScore(){
 
 function playRound(humanChoice, computerChoice)
 {
-    if (humanChoice=="Rock"&&computerChoice=="Scissors")
+    if (humanChoice=="rock"&&computerChoice=="scissors")
      {
          alert(`You win! ${humanChoice} beats ${computerChoice}`)
          humanScore++
          updateScore()
  
      }
-     else if (humanChoice=="Rock" && computerChoice=="Paper"){
+     else if (humanChoice==="rock" && computerChoice==="paper"){
          alert(`You lose! ${computerChoice} beats ${humanChoice}`)
          computerScore++;
          updateScore()
      }
-     else if (humanChoice=="Paper" && computerChoice=="Scissors"){
+     else if (humanChoice==="paper" && computerChoice==="scissors"){
          alert(`You lose! ${computerChoice} beats ${humanChoice}`)
          computerScore++;
          updateScore()
      }
-     else if (humanChoice=="Scissors" && computerChoice=="Paper"){
+     else if (humanChoice==="scissors" && computerChoice==="paper"){
          alert(`You win! ${humanChoice} beats ${computerChoice}`)
          humanScore++
          updateScore()
      }
-     else if (humanChoice=="Paper" && computerChoice=="Rock"){
+     else if (humanChoice==="paper" && computerChoice==="rock"){
          alert(`You win! ${humanChoice} beats ${computerChoice}`)
          humanScore++
          updateScore()
 
      }
-     else if (humanChoice=="Scissors" && computerChoice=="Rock"){
+     else if (humanChoice==="scissors" && computerChoice==="rock"){
          alert(`You lose! ${computerChoice} beats ${humanChoice}`)
          computerScore++;
          updateScore()
 
      }
      
-     else
+     else if (humanChoice===computerChoice)
      {
          alert(`${humanChoice} vs ${computerChoice} is a draw`);
          updateScore()
      }
     }
 
-// Create a function playGame and call 5 times playRound
+// Create a function playGame
 
 function playGame(){
     for(i=0; i<5; i++)
-    {
         playRound(getHumanChoice(), getComputerChoice())
-    }
+
 
     if(humanScore>computerScore){
         alert("You won! Congrats")
@@ -119,10 +111,9 @@ function playGame(){
     }
 }
 
-
 playGame()
 
-// There is a bug and have to looks for it
+// Bug Fixed
 
 
 
