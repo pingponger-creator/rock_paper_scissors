@@ -125,8 +125,8 @@ function playGame(){
 
 playGame()
 
-// Bug Fixed
-// Needs error handling
+// Code functions fully.
+// Other features will be checked on a late date including UI.
 
 
 
