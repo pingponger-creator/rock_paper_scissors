@@ -29,13 +29,14 @@ function getHumanChoice(){
         alert("You didnt enter anything!");
         return getHumanChoice();
     } 
-    else if(!((humanChoice.toLowerCase().includes("rock"))||(humanChoice.toLowerCase().includes("paper")) ||(humanChoice.toLowerCase().includes("scissors")))) //conditon to check spelling
+    // "rock".equals(humanChoice.toLowerCase().trim())
+    else if(!((humanChoice.toLowerCase().trim().equals("rock"))||(humanChoice.toLowerCase().trim().equals("paper")) ||(humanChoice.toLowerCase().trim().equals("scissors")))) //conditon to check spelling
     {
         alert("Check your spelling and Enter Rock, Paper or Scissors")
         return getHumanChoice()
     }
     else {
-    humanChoice = humanChoice.toLowerCase();
+    humanChoice = humanChoice.toLowerCase().trim();
     }
     return humanChoice;
 }
