@@ -29,8 +29,8 @@ function getHumanChoice(){
         alert("You didnt enter anything!");
         return getHumanChoice();
     } 
-    // "rock".equals(humanChoice.toLowerCase().trim())
-    else if(!((humanChoice.toLowerCase().trim().equals("rock"))||(humanChoice.toLowerCase().trim().equals("paper")) ||(humanChoice.toLowerCase().trim().equals("scissors")))) //conditon to check spelling
+//    Work on trim function....
+    else if(!((humanChoice.toLowerCase().trim()==="rock")||(humanChoice.toLowerCase().trim()==="paper") ||(humanChoice.toLowerCase().trim()==="scissors"))) //conditon to check spelling
     {
         alert("Check your spelling and Enter Rock, Paper or Scissors")
         return getHumanChoice()
