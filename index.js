@@ -29,7 +29,7 @@ function getHumanChoice(){
         alert("You didnt enter anything!");
         return getHumanChoice();
     } 
-//    Work on trim function....
+// trim() method removes any space after the string
     else if(!((humanChoice.toLowerCase().trim()==="rock")||(humanChoice.toLowerCase().trim()==="paper") ||(humanChoice.toLowerCase().trim()==="scissors"))) //conditon to check spelling
     {
         alert("Check your spelling and Enter Rock, Paper or Scissors")
